@@ -18,8 +18,8 @@ namespace TestTask.Services.Implementations
         {
             var userWithMaxOrders = await _context.Users
                 .Include(o => o.Orders)
-                                    .OrderByDescending(u => u.Orders.Count)
-                                    .FirstOrDefaultAsync();
+                .OrderByDescending(u => u.Orders.Count)
+                .FirstOrDefaultAsync();
 
             return userWithMaxOrders;
         }
